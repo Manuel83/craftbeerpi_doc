@@ -5,6 +5,18 @@ title: Extend CraftBeerPi
 permalink: /developer/
 ---
 
+# Introduction
+
+CraftBeerPi 3.0 is an open platforn which allows to extend the basic software with futher plugins.
+
+You can extend the following modules. 
+* Actors
+* Sensors
+* KettleController (Logics to control the Kettle Temperature)
+* FermentationController (Logics to control the Fermentation Temperature)
+* Steps 
+
+
 
 ## How to develop a new plugin
 
@@ -27,13 +39,7 @@ Folder Structure
 +-- ....
 ```
 
-You can extend the following modules. 
 
-* Actors
-* Sensors
-* KettleController (Logics to control the Kettle Temperature)
-* FermentationController (Logics to control the Fermentation Temperature)
-* Steps 
 
 ## Publish Plugin
 1. Upload your __init__.py to your own GitHub repository. 
@@ -209,6 +215,8 @@ class SampleController(KettleController):
 ```
 
 ## Custom Brew Step 
+
+With a custom brew step you can modify the brew step logic. For example you could start timer based on current sensor data or switch an actor.
 
 ```
 from modules.core.props import Property, StepProperty
