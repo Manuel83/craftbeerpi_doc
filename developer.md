@@ -294,4 +294,51 @@ actor = StepProperty.Actor("Actor")
 ```
 
 
+## Custom Initializer
+
+If you just want to run some code once during startup you can extend CraftBeerPi with custom Initializers
+
+```
+from modules import cbpi
+
+@cbpi.initalizer(order=100)
+def init(cbpi):
+    ## YOUR CODE GOES HERE
+    pass
+```
+
+@cbpi.initalizer Parameter
+* order = Integer value to modify the execution order (optional)
+
+## Custom Background Task
+
+You can extend CraftBeerPi with custom background task. Below you will find a basic example where the method gets invoked every secons
+
+```
+from modules import cbpi, 
+
+@cbpi.backgroundtask(key="my_task", interval=1)
+def my_custom_background_task():
+    # YOUR CODE GOES HERE
+    pass
+        
+```
+
+@cbpi.backgroundtask Parameter
+* key = String value free to choose but must be unique in CraftBeerPi system
+* interval = float value in which interval the method is invoked. ie: 0.1 = 100ms 1=1sec
  
+## Custom Buzzer 
+```
+from modules import cbpi
+
+class MyBuzzer(object):
+    def beep(self):
+        print "#########################  PLAY MY SOUND"
+
+@cbpi.initalizer(order=-1)
+def init(cbpi):
+    print "############## INIT BUZZER"
+    cbpi.buzzer = MyBuzzer()
+    print "INIT BUZZER"
+```
