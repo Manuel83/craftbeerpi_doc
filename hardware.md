@@ -93,7 +93,7 @@ For Raspberry Pi a 7” touch screen (800x600) is available. This touch screen c
 > A Raspberry Pi 3 is recommended if you are running the user interface on the Pi.
 
 ## Piezo Buzzer
-A Piezo Buzzer is use to give acoustic singles during the brewing process. For example CraftBeerPi will inform you when the step is finished and the next brewing step is started.
+A Piezo Buzzer is use to give acoustic signals during the brewing process. For example CraftBeerPi will inform you when the step is finished and the next brewing step is started.
 Make sure that the buzzer runs with 3.3V. Connect the buzzer with the GPIO 25 and and GND pin of your raspberry pi.
 
 > You can configure a different GPIO in the CraftBeerPi Config via the web interface.
